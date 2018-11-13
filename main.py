@@ -1,11 +1,16 @@
-from classes.DBWorker import DBWorker
-from classes.TelegraMoneyBot import TelegraMoneyBot
+import mysql.connector
+from classes import DBWorker
+
 
 def main():
-    dbWorker = DBWorker()
-    bot = TelegraMoneyBot(dbWorker, '513541660:AAFOKu6tSYuW489hcEURnJ57TtfmfpfEjE4')
-    bot.polling()
+    connection = mysql.connector.connect(user='root', password='Da!@#$%^&*()1',
+                                         host='62.109.16.63',
+                                         database='telegrMoney',
+                                         auth_plugin='mysql_native_password')
+    db = DBWorker.DBWorker(connection)
+
     pass
 
-if __name__=='__main__':
+
+if __name__ == '__main__':
     main()
