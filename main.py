@@ -9,8 +9,6 @@ def main():
                                          auth_plugin='mysql_native_password')
     db = DBWorker.DBWorker(connection)
 
-    #db.saveUser("12334", "Sehin", "20000")
-    
     pass
 
 
